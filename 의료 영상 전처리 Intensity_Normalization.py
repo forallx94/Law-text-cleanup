@@ -607,22 +607,24 @@ def image_matrix_to_images(V, imgs):
     return img_list
 
 
-# 실행
-input_dir = r"C:\Users\POP\Desktop\work\MICCAI_BraTS_2019_Data_Training\HGG"
-out_dir = r'C:\Users\POP\Desktop\work\MICCAI_BraTS_2019_Data_Training\change'
-input_contrast = 'flair'
+if __name__ == "__main__":
 
-for (path, dir, files) in os.walk(input_dir):
-    for file in files: 
-        if input_contrast +'.nii' in file:
-            img_dir = os.path.join(path, file)
-            img = nib.load(img_dir)
+    # 실행
+    input_dir = r"C:\Users\POP\Desktop\work\MICCAI_BraTS_2019_Data_Training\HGG"
+    out_dir = r'C:\Users\POP\Desktop\work\MICCAI_BraTS_2019_Data_Training\change'
+    input_contrast = 'flair'
 
-            nib.save( zscore_normalize(img) , os.path.join(out_dir, 'zscore_normalize', file))
-            ws_normalize(img_dir, input_contrast, output_dir=os.path.join(out_dir,'ws_normalize'), write_to_disk=True)
-            ravel_normalize(img_dir ,mask_dir = None ,contrast = input_contrast , output_dir= os.path.join(out_dir,'ravel_normalize'), write_to_disk=True)
-            nib.save(kde_normalize(img,contrast = input_contrast) , os.path.join(out_dir, 'kde_normalize', file))
-            nyul_normalize(img_dir , output_dir= os.path.join(out_dir, 'nyul_normalize'))
-            nib.save(gmm_normalize(img, contrast = input_contrast) , os.path.join(out_dir,'gmm_normalize' ,file))
+    for (path, dir, files) in os.walk(input_dir):
+        for file in files: 
+            if input_contrast +'.nii' in file:
+                img_dir = os.path.join(path, file)
+                img = nib.load(img_dir)
+
+                nib.save( zscore_normalize(img) , os.path.join(out_dir, 'zscore_normalize', file))
+                ws_normalize(img_dir, input_contrast, output_dir=os.path.join(out_dir,'ws_normalize'), write_to_disk=True)
+                ravel_normalize(img_dir ,mask_dir = None ,contrast = input_contrast , output_dir= os.path.join(out_dir,'ravel_normalize'), write_to_disk=True)
+                nib.save(kde_normalize(img,contrast = input_contrast) , os.path.join(out_dir, 'kde_normalize', file))
+                nyul_normalize(img_dir , output_dir= os.path.join(out_dir, 'nyul_normalize'))
+                nib.save(gmm_normalize(img, contrast = input_contrast) , os.path.join(out_dir,'gmm_normalize' ,file))
 
 

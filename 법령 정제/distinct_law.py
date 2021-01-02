@@ -341,9 +341,9 @@ if __name__ == "__main__":
         my_df.iloc[num]["Content"] = new_line
         
         
-    my_df.to_excel(r'C:\Users\POP\Desktop\work\5-4\법 정규편식\example.xlsx')
+    my_df.to_excel('.\{}.xlsx'.format(law_name))
 
-    f = open(os.path.join(write_path , 'example.txt'), 'w', encoding='UTF8')
+    f = open(os.path.join(write_path , '{}.txt'.format(law_name)), 'w', encoding='UTF8')
     for index, content in zip(my_df["index"],my_df["Content"]):
         if index != None:
             f.write(index)
