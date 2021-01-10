@@ -7,8 +7,4 @@ What i did
 
 # 2. 의료 영상 전처리 
 
-MRI 영상에 대해 몇가지 정규화 방식을 적용하는 코드 
-
-# 3. Log Anomaly Detection
-
-[Log dataset](https://www.kaggle.com/shawon10/web-log-dataset?rvi=1)에서 이상치를 발견(Anomaly Detection) 을 Autoencoder 를 활용하여 진행. 
+MRI 영상에 대해 몇 가지 정규화 방식을 적용하는 코드 
