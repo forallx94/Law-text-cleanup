@@ -8,3 +8,14 @@ What i did
 # 2. 의료 영상 전처리 
 
 MRI 영상에 대해 몇 가지 정규화 방식을 적용하는 코드 
+
+참고 링크
+* https://github.com/jcreinhold/intensity-normalization
+
+# 3. Variational AutoEncoder (VAE) 
+
+비지도 이상치 탐색 (Unsupervised Anomaly Detection) 방법중의 하나인 Variational AutoEncoder에 대한 코드
+
+참고 링크
+* https://keraskorea.github.io/posts/2018-10-23-keras_autoencoder/
+* https://wiseodd.github.io/techblog/2016/12/10/variational-autoencoder/
